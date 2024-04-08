@@ -1,6 +1,6 @@
 # Project: MERN Application Deployment on AWS
 
-This guide covers the deployment of a MERN (MongoDB, Express, React, Node.js) application on AWS, including CI/CD, IaC, and monitoring.
+This guide covers the deployment of a MERN application on AWS, including CI/CD, IaC, and monitoring.
 
 ## Step 1: Set Up the AWS Environment
 
