@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+
+  helloservice:
+    build: ./backend/helloService
+    ports:
+      - "4200:4200"
+
+  profileservice:
+    build: ./backend/profileService
+    ports:
+      - "4300:4300"
+    environment:
+    - PORT=4300
+      - MONGO_URL=mongodb+srv://bhuyankaibalyaprasad1999:H1DodGR7ZALRabjO@hvassign01.bzxol7m.mongodb.net/mern_blog?retryWrites=true&w=majority&appName=HVAssign01
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
