@@ -1,0 +1,18 @@
+replicaCount: 2
+
+image:
+  repository: 160472638876.dkr.ecr.us-east-2.amazonaws.com/smm-frontend
+  pullPolicy: IfNotPresent
+  tag: latest
+
+service:
+  type: LoadBalancer
+  port: 80
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

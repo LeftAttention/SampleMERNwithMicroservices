@@ -1,0 +1,27 @@
+helloService:
+  replicaCount: 1
+  image:
+    repository: 160472638876.dkr.ecr.us-east-2.amazonaws.com/smm-hello-service
+    pullPolicy: IfNotPresent
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 3001
+
+profileService:
+  replicaCount: 1
+  image:
+    repository: 160472638876.dkr.ecr.us-east-2.amazonaws.com/smm-profile-service
+    pullPolicy: IfNotPresent
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 3002
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

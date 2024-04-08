@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: profile-service
+spec:
+  replicas: {{ .Values.profileService.replicaCount }}
+  selector:
+    matchLabels:
+      app: profile-service
+  template:
+    metadata:
+      labels:
+        app: profile-service
+    spec:
+      containers:
+        - name: profile-service
+          image: "{{ .Values.profileService.image.repository }}:{{ .Values.profileService.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.profileService.service.port }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
