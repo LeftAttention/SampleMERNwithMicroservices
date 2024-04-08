@@ -137,7 +137,3 @@ This guide covers the deployment of a MERN (MongoDB, Express, React, Node.js) ap
 
 ### 14.3 Configure SES
 - Use AWS SES for email notifications.
-
----
-
-Ensure all steps are validated, and necessary configurations are done as per the project requirements. Each step should be detailed in separate sections of the project documentation with corresponding command snippets and explanations.
